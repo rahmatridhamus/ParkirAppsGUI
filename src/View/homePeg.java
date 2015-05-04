@@ -36,11 +36,12 @@ public class homePeg extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
         txtPlatnomorTbh = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        txtIsTambah = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         boxKendaraan2 = new javax.swing.JComboBox();
         btnTbh = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         boxKendaraan1 = new javax.swing.JComboBox();
@@ -51,13 +52,9 @@ public class homePeg extends javax.swing.JFrame {
         btnKeluar = new javax.swing.JButton();
         checkDenda = new javax.swing.JCheckBox();
         jPanel3 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        btnCetakHis2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        historyKen = new javax.swing.JTextArea();
+        butRefresh = new javax.swing.JButton();
         butLogout = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -66,9 +63,8 @@ public class homePeg extends javax.swing.JFrame {
 
         txtPlatnomorTbh.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel1.setText("Plat Nomor :");
+        txtIsTambah.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
+        txtIsTambah.setForeground(new java.awt.Color(204, 204, 204));
 
         jLabel4.setForeground(new java.awt.Color(204, 204, 204));
 
@@ -83,6 +79,10 @@ public class homePeg extends javax.swing.JFrame {
 
         btnTbh.setText("Tambah");
 
+        jLabel2.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel2.setText("Plat Nomor :");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -96,17 +96,23 @@ public class homePeg extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(0, 220, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 220, Short.MAX_VALUE)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(146, 146, 146)
                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnTbh, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtPlatnomorTbh, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtPlatnomorTbh, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtIsTambah, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addContainerGap(24, Short.MAX_VALUE))))
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGap(20, 20, 20)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
+                    .addGap(472, 472, 472)))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,9 +120,7 @@ public class homePeg extends javax.swing.JFrame {
                 .addContainerGap(78, Short.MAX_VALUE)
                 .addComponent(boxKendaraan2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPlatnomorTbh, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(txtPlatnomorTbh, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -126,7 +130,14 @@ public class homePeg extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(btnTbh, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 83, Short.MAX_VALUE))
+                .addGap(19, 19, 19)
+                .addComponent(txtIsTambah, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                    .addContainerGap(149, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(137, 137, 137)))
         );
 
         jTabbedPane1.addTab("Tambah Kendaraan", jPanel4);
@@ -217,50 +228,24 @@ public class homePeg extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(44, 62, 80));
 
-        jLabel8.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel8.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel8.setText("Parkir Motor :");
+        historyKen.setColumns(20);
+        historyKen.setRows(5);
+        jScrollPane1.setViewportView(historyKen);
 
-        jLabel9.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel9.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel9.setText("jLabel4");
-
-        jLabel10.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel10.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel10.setText("Parkir Mobil :");
-
-        jLabel11.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel11.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel11.setText("jLabel5");
-
-        btnCetakHis2.setText("Cetak History");
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        butRefresh.setText("refresh");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(165, 165, 165)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9)
-                .addGap(61, 61, 61)
-                .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel11)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(jScrollPane1))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(butRefresh))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap(506, Short.MAX_VALUE)
-                        .addComponent(btnCetakHis2)))
+                        .addGap(64, 64, 64)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 539, Short.MAX_VALUE)))
                 .addGap(21, 21, 21))
         );
         jPanel3Layout.setVerticalGroup(
@@ -269,14 +254,8 @@ public class homePeg extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnCetakHis2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel11))
-                .addContainerGap())
+                .addComponent(butRefresh)
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Show History", jPanel3);
@@ -376,10 +355,10 @@ public class homePeg extends javax.swing.JFrame {
     }
     
     public void addActionListener(ActionListener al){
-        btnCetakHis2.addActionListener(al);
         btnKeluar.addActionListener(al);
         btnTbh.addActionListener(al);
         butLogout.addActionListener(al);
+        butRefresh.addActionListener(al);
     }
     
     public JTextField getTxtPlatNomorTbh() {
@@ -389,10 +368,14 @@ public class homePeg extends javax.swing.JFrame {
     public JTextField getTxtPlatNomor() {
         return txtPlatNomor;
     }
-    
-    public javax.swing.JButton getButCetakHis2() {
-        return btnCetakHis2;
+    public javax.swing.JLabel getTxtBiaya() {
+        return txtBiaya;
     }
+    
+    public javax.swing.JLabel getTxtIsTambah() {
+        return txtIsTambah;
+    }
+    
     
     public javax.swing.JButton getButLogout() {
         return butLogout;
@@ -400,6 +383,10 @@ public class homePeg extends javax.swing.JFrame {
     
     public javax.swing.JButton getButTbh() {
         return btnTbh;
+    }
+    
+    public javax.swing.JButton getButRefresh() {
+        return butRefresh;
     }
     
     public javax.swing.JButton getButKeluar() {
@@ -421,34 +408,35 @@ public class homePeg extends javax.swing.JFrame {
     public  javax.swing.JCheckBox getCheckDenda(){
         return checkDenda;
     }
+    
+    public  javax.swing.JTextArea getHistoryKen(){
+        return historyKen;
+    }
             
             
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox boxKendaraan1;
     private javax.swing.JComboBox boxKendaraan2;
-    private javax.swing.JButton btnCetakHis2;
     private javax.swing.JButton btnKeluar;
     private javax.swing.JButton btnTbh;
     private javax.swing.JButton butLogout;
+    private javax.swing.JButton butRefresh;
     private javax.swing.JCheckBox checkDenda;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
+    private javax.swing.JTextArea historyKen;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel txtBiaya;
+    private javax.swing.JLabel txtIsTambah;
     private javax.swing.JTextField txtPlatNomor;
     private javax.swing.JTextField txtPlatnomorTbh;
     // End of variables declaration//GEN-END:variables
